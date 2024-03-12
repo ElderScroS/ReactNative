@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 
 const messages = [
     { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
