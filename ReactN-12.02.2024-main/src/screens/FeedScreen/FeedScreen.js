@@ -18,23 +18,21 @@ const Message = ({ user, avatarUrl, text }) => (
 );
 
 const FeedScreen = ({navigation}) => (
-    <ImageBackground source={{ uri: '../../../assets/tron.jpg' }} style={styles.background}>
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={[styles.text, { color: "#5DB075", fontSize: 20 }]}>Back</Text>
-                <Text style={styles.text}>Feed</Text>
-                <Text style={[styles.text, { color: "#5DB075", fontSize: 20 }]}>Filter</Text>
-            </View>
-            <View style={styles.search}>
-                <Text style={styles.text}>Search</Text>
-            </View>
-            <FlatList
-                data={messages}
-                keyExtractor={item => item.id}
-                renderItem={({ item }) => <Message {...item} />}
-            />
+    <View style={styles.container}>
+        <View style={styles.header}>
+            <Text style={styles.text}>Back</Text>
+            <Text style={styles.text}>Feed</Text>
+            <Text style={styles.text}>Filter</Text>
         </View>
-    </ImageBackground>
+        <View style={styles.search}>
+            <Text style={styles.text}>Search</Text>
+        </View>
+        <FlatList
+            data={messages}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => <Message {...item} />}
+        />
+    </View>
 );
 
 const styles = StyleSheet.create({
@@ -46,6 +44,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
+    },
+    feedText: {
+        color: "#5DB075",
+        fontSize: 20
     },
     text: {
         fontSize: 20,
