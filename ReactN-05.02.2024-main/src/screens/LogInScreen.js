@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+vimport React, { useState } from 'react';
 import { Text, View, StyleSheet, Button, TextInput, Image } from "react-native";
 
 const LogInScreen = ({ navigation }) => {
@@ -6,7 +6,7 @@ const LogInScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
 
     const login = () => {
-        if (email === 'admin@admin.com' && password === 'admin') {
+        if (email === 'example@gmail.com' && password === 'example') {
             navigation.navigate('Home');
         } else {
             console.log('Email or Password is incorrect');
