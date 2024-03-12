@@ -1,41 +1,45 @@
 import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
+import Layout from '../../Layout';
 
-const messages = [
-    { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    { id: '2', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    { id: '3', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    { id: '4', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    { id: '5', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-];
+const FeedScreen = ({navigation}) => {
+    const messages = [
+        { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+        { id: '2', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+        { id: '3', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+        { id: '4', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+        { id: '5', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+        // ...
+    ];
+    
+    const Message = ({ user, avatarUrl, text }) => (
+        <View style={styles.messageContainer}>
+            <Image source={{ uri: avatarUrl }} style={styles.avatar} />
+            <View>
+                <Text>{user}</Text>
+                <Text>{text}</Text>
+            </View>
+        </View>
+    );
 
-const Message = ({ user, avatarUrl, text }) => (
-    <View style={styles.messageContainer}>
-        <Image source={{ uri: avatarUrl }} style={styles.avatar} />
-        <View>
-            <Text>{user}</Text>
-            <Text>{text}</Text>
-        </View>
-    </View>
-);
-
-const FeedScreen = ({navigation}) => (
-    <View style={styles.container}>
-        <View style={styles.header}>
-            <Text style={styles.text}>Back</Text>
-            <Text style={styles.text}>Feed</Text>
-            <Text style={styles.text}>Filter</Text>
-        </View>
-        <View style={styles.search}>
-            <Text style={styles.text}>Search</Text>
-        </View>
-        <FlatList
-            data={messages}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => <Message {...item} />}
-        />
-    </View>
-);
+    return (
+        <Layout title="Feed">
+            <View style={styles.header}>
+                <Text style={styles.text}>Back</Text>
+                <Text style={styles.feedText}>Feed</Text>
+                <Text style={styles.text}>Filter</Text>
+            </View>
+            <View style={styles.search}>
+                <Text style={styles.text}>Search</Text>
+            </View>
+            <FlatList
+                data={messages}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => <Message {...item} />}
+            />
+        </Layout>
+    );
+};
 
 const styles = StyleSheet.create({
     background: {
@@ -48,13 +52,12 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     feedText: {
-        color: "#5DB075",
-        fontSize: 20
+        fontSize: 20,
+        lineHeight: 29.05
     },
     text: {
-        fontSize: 20,
-        fontWeight: "500",
-        lineHeight: 29.05
+        color: "#5DB075",
+        fontSize: 20
     },
     header: {
         flexDirection: "row",
