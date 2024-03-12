@@ -6,7 +6,6 @@ const CalendarIcon = (props) => {
     const {width, height, color} = props;
 
     return (
-
         <View style={styles.iconContainer}>
             <Svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +20,6 @@ const CalendarIcon = (props) => {
                 />
             </Svg>
         </View>
-
     )};
 
 const styles = StyleSheet.create({
@@ -33,7 +31,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         borderRadius: 20,
     },
-
 })
 
 
