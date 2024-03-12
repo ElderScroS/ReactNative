@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet, ImageBackground } from 'react-native';
 
 const messages = [
-    { id: '1', user: 'Mark Nikulov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Mark Nikulov!' },
+    { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
     { id: '2', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    // ...
+    { id: '3', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+    { id: '4', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+    { id: '5', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
 ];
 
 const Message = ({ user, avatarUrl, text }) => (
