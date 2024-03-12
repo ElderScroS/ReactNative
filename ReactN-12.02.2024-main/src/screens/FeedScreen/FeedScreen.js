@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
-import Layout from '.';
+import Layout from '../../Layout';
 
 const FeedScreen = ({navigation}) => {
     const messages = [
