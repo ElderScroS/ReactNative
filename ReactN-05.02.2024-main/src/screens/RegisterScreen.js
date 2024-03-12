@@ -10,10 +10,6 @@ const RegisterScreen = ({navigation}) => {
     const register = () => {
         if (navigation.navigate('LogInScreen')) {
             console.log('Registration successful');
-            console.log('Name: ', name);
-            console.log('Email: ', email);
-            console.log('Password: ', password);
-            console.log('Confirm Password: ', confirmPassword);
         } else {
             console.log('Email or Password is incorrect');
         }
