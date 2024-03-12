@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 
 const messages = [
     { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
@@ -20,23 +20,21 @@ const Message = ({ user, avatarUrl, text }) => (
 );
 
 const FeedPage = () => (
-    <ImageBackground source={{ uri: '/assets/tron.jpg' }} style={styles.background}>
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.text}>Back</Text>
-                <Text style={styles.feedText}>Feed</Text>
-                <Text style={styles.text}>Filter</Text>
-            </View>
-            <View style={styles.search}>
-                <Text style={styles.text}>Search</Text>
-            </View>
-            <FlatList
-                data={messages}
-                keyExtractor={item => item.id}
-                renderItem={({ item }) => <Message {...item} />}
-            />
+    <View style={styles.container}>
+        <View style={styles.header}>
+            <Text style={styles.text}>Back</Text>
+            <Text style={styles.feedText}>Feed</Text>
+            <Text style={styles.text}>Filter</Text>
         </View>
-    </ImageBackground>
+        <View style={styles.search}>
+            <Text style={styles.text}>Search</Text>
+        </View>
+        <FlatList
+            data={messages}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => <Message {...item} />}
+        />
+    </View>
 );
 
 const styles = StyleSheet.create({
