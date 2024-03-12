@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet, ImageBackground } from 'react-native';
 
 const messages = [
-    { id: '1', user: 'Mark Nikulov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Mark Nikulov!' },
+    { id: '1', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
     { id: '2', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
-    // ...
+    { id: '3', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+    { id: '4', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
+    { id: '5', user: 'Elvin Suleymanov', avatarUrl: 'https://reactnative.dev/img/tiny_logo.png', text: 'Hello i am Elvin Suleymanov!' },
 ];
 
 const Message = ({ user, avatarUrl, text }) => (
@@ -18,23 +20,21 @@ const Message = ({ user, avatarUrl, text }) => (
 );
 
 const FeedScreen = ({navigation}) => (
-    <ImageBackground source={{ uri: '../../../assets/tron.jpg' }} style={styles.background}>
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={[styles.text, { color: "#5DB075", fontSize: 20 }]}>Back</Text>
-                <Text style={styles.text}>Feed</Text>
-                <Text style={[styles.text, { color: "#5DB075", fontSize: 20 }]}>Filter</Text>
-            </View>
-            <View style={styles.search}>
-                <Text style={styles.text}>Search</Text>
-            </View>
-            <FlatList
-                data={messages}
-                keyExtractor={item => item.id}
-                renderItem={({ item }) => <Message {...item} />}
-            />
+    <View style={styles.container}>
+        <View style={styles.header}>
+            <Text style={styles.text}>Back</Text>
+            <Text style={styles.text}>Feed</Text>
+            <Text style={styles.text}>Filter</Text>
         </View>
-    </ImageBackground>
+        <View style={styles.search}>
+            <Text style={styles.text}>Search</Text>
+        </View>
+        <FlatList
+            data={messages}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => <Message {...item} />}
+        />
+    </View>
 );
 
 const styles = StyleSheet.create({
@@ -46,6 +46,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
+    },
+    feedText: {
+        color: "#5DB075",
+        fontSize: 20
     },
     text: {
         fontSize: 20,
